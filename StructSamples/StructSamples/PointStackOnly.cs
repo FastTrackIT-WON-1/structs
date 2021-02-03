@@ -2,9 +2,9 @@
 
 namespace StructSamples
 {
-    public readonly struct Point : IMovableObject
+    public readonly ref struct PointStackOnly
     {
-        public Point(int x, int y)
+        public PointStackOnly(int x, int y)
         {
             this.X = x;
             this.Y = y;
@@ -34,11 +34,6 @@ namespace StructSamples
         public void Print()
         {
             Console.WriteLine($"Point found at X={X}, Y={Y}");
-        }
-
-        public IMovableObject Move(int dx, int dy)
-        {
-            return new Point(X + dx, Y + dy);
         }
     }
 }
